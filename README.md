@@ -2,7 +2,7 @@
 
 ## Serial control
 
-The arduino received temperature in °C through serial.
+The arduino receives temperature in °C through serial.
 
 The serial command to control it:
 

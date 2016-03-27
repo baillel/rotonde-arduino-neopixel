@@ -1,4 +1,4 @@
-# Neopixel Ring to display temperature
+# Neopixel Ring to display temperature with Arduino
 
 ## Serial control
 

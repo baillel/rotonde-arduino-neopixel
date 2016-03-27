@@ -1,45 +1,40 @@
-# Firmware for the bionico dev kit
+# Neopixel Ring to display temperature
 
 ## Serial control
 
-The hand received fingers positions through serial.
+The arduino received temperature in °C through serial.
 
-The serial command to control finger positions is as follows:
+The serial command to control it:
 
 ```
-0,0,1,0,1,0,1,0,1,0.5,1;
+0,20; // for 20 °C
 ```
 
-The first '0' is constant. The next numbers are by pairs: position and
-speed.
+The first '0' is constant. The next number is the tempetature.
 
-Each position and speed are constrained to the range 0-1.
+If the temperature is less than MIN_TEMP, the LEDs blink in blue. They blink in red if the temperature is more than MAX_TEMP.
 
-For example, the command above sets the first finger at position 0 at
-speed 1; The last finger is at position 0.5 and speed 1.
+For exemple : 
 
-## Examples to copy-paste
-
-Full open:
+80 °C
 
 ```
 
-0,0,1,0,1,0,1,0,1,0,1;
+0,80;
 
 ```
 
-Full close:
+-1 °C
 
 ```
 
-0,1,1,1,1,1,1,1,1,1,1;
+0,-1;
 
 ```
 
-Full close at variable speeds for each fingers:
+30 °C
 
 ```
 
-0,1,0.1,1,0.2,1,0.4,1,0.6,1,0.9;
+0,30;
 
-```
